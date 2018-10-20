@@ -144,4 +144,4 @@ $(document).ready(function () {
     $("#output_max_humid").val(" ");
     });
 });
-})'
+});
