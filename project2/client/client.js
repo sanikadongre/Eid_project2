@@ -43,7 +43,7 @@ $(document).ready(function () {
        if(check_farh){
          var temp = parseFloat(array_str[1])
          temp = ((temp * 1.8) + 32)
-         $("#output_present_temo").val(temp.toFixed(2)+ "\u00b0F Timestamp: " + array_str[2]);
+         $("#output_present_temp").val(temp.toFixed(2)+ "\u00b0F Timestamp: " + array_str[2]);
        }
        else{
         $("#output_present_temo").val(array_str[1] + "\u00b0F Timestamp: " + array_str[2]);
@@ -94,3 +94,54 @@ $(document).ready(function () {
       }
   };
     };
+    $("#get_present_temp").click(function(evt){
+      ws.send("present_temp");
+    });
+
+    $("#get_present_humidity").click(function(evt) {
+      ws.send("present_humidity");
+    });
+
+    $("#get_avg_temp").click(function(evt) {
+      ws.send("avg_temp");
+    });
+
+    $("#get_avg_hum").click(function(evt) {
+      ws.send("avg_humid");
+    });
+
+    $("#get_max_temp").click(function(evt) {
+      ws.send("Max_temp");
+    });
+
+    $("#get_max_hum").click(function(evt) {
+      ws.send("Max_humid");
+    });
+
+    $("#get_min_temp").click(function(evt) {
+      ws.send("Min_temp");
+    });
+
+    $("#get_min_hum").click(function(evt) {
+      ws.send("Min_humid");
+    });
+
+    $("#graph_temp").click(function(evt) {
+      ws.send("graph_temperature");
+    });
+
+    $("#graph_hum").click(function(evt) {
+      ws.send("graph_humidity");
+    });
+    $("#clear").click(function(evt) {
+    $("#output_present_temp").val(" ");
+    $("#output_avg_temp").val(" ");
+    $("#output_min_temp").val(" ");
+    $("#output_max_temp").val(" ");
+    $("#output_present_humidity").val(" ");
+    $("#output_avg_humid").val(" ");
+    $("#output_min_humid").val(" ");
+    $("#output_max_humid").val(" ");
+    });
+});
+})'
