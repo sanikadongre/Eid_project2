@@ -19,7 +19,7 @@ $(document).ready(function () {
   var celsiusunit; 
   var error;
   var faranunit;
-  ws = new WebSocket("ws://10.0.0.241:8888/ws")
+  ws = new WebSocket("ws://10.0.0.224:8888/ws")
 
 //Error handling for websockets
   ws.onerror = function(error){
